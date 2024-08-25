@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 WORKDIR="./work"
-UBUNTU_REPO="https://cloud-images.ubuntu.com/focal/current/"
-UBUNTU_IMG="focal-server-cloudimg-amd64.img"
+UBUNTU_REPO="https://cloud-images.ubuntu.com/noble/current/"
+UBUNTU_IMG="noble-server-cloudimg-amd64.img"
+
 VMID=9000
-TEMPLATE_NAME="ubuntu-2004-cloudinit-template"
+TEMPLATE_NAME="ubuntu-2404-cloudinit-template"
 MEMORY=1024
 CORES=1
 
