@@ -1,7 +1,7 @@
 # ProxMox VE Cloud-Init Template Creation script
 
 This is a handy script to speed up the creation of [Ubuntu Cloud](https://ubuntu.cloud/) templates that can be configured through Cloud-Init
-in [ProxMox VE](http://www.prox.com/) server virtualization management solution .
+in [ProxMox VE](http://www.proxmox.com/) server virtualization management solution .
 
 ## Requirements
 The script needs be executed directly on a [ProxMox](http://www.prox.com/) host. It also requires the installation of
@@ -9,7 +9,7 @@ The script needs be executed directly on a [ProxMox](http://www.prox.com/) host.
 
 ## Usage
 The script should be executed in the ProxMox host running as root.
-Running it without arguments will create an [Ubuntu Cloud 20.04](https://cloud-images.ubuntu.com/releases/focal/release/)
+Running it without arguments will create an [Ubuntu Cloud 24.04](https://cloud-images.ubuntu.com/releases/noble/release/)
 template.
 
 ```shell
@@ -20,29 +20,29 @@ pm-tpl-create.sh
 |:---------|:-------------------------|:-----------------------------------------------|
 | -h       | Help                     | N/A                                            |
 | -v       | vmid                     | 9000                                           |
-| -t       | Template name            | ubuntu-2004-cloudinit-template                 |
+| -t       | Template name            | ubuntu-2404-cloudinit-template                 |
 | -m       | Memory                   | 1024 Kb                                        |
 | -c       | Cores                    | 1                                              |
-| -r       | Cloud images repository. | https://cloud-images.ubuntu.com/focal/current/ |
-| -i       | Image name.              | focal-server-cloudimg-amd64.img                |              
+| -r       | Cloud images repository. | https://cloud-images.ubuntu.com/noble/current/ |
+| -i       | Image name.              | noble-server-cloudimg-amd64.img                |              
 
 ## Examples
 
-### Creating an [Ubuntu Cloud 22.04 (Jammy Jellyfish)](https://cloud-images.ubuntu.com/jammy/)
+### Creating an [Ubuntu Cloud 24.04 (Noble Numbat)](https://cloud-images.ubuntu.com/noble/)
 ```shell
-pm-tpl-create.sh -t "ubuntu-22-04-tpl" \
-   -r https://cloud-images.ubuntu.com/jammy/current/ \
-   -i jammy-server-cloudimg-amd64.img   
+pm-tpl-create.sh -t "ubuntu-24-04-tpl" \
+   -r https://cloud-images.ubuntu.com/noble/current/ \
+   -i noble-server-cloudimg-amd64.img   
 ```
 
 
 ## Overview of commands executed by the script
 Default values used by the script
 ```shell
-UBUNTU_REPO="https://cloud-images.ubuntu.com/focal/current/"
-UBUNTU_IMG="focal-server-cloudimg-amd64.img"
+UBUNTU_REPO="https://cloud-images.ubuntu.com/noble/current/"
+UBUNTU_IMG="focal-noble-cloudimg-amd64.img"
 VMID=9000
-TEMPLATE_NAME="ubuntu-2004-cloudinit-template"
+TEMPLATE_NAME="ubuntu-2404-cloudinit-template"
 MEMORY=1024
 CORES=1
 ```
